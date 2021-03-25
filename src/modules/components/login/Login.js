@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux';
 
-export default class Login extends Component {
-    render() {
-        return (
-            <div>
-                hola
-            </div>
-        )
-    }
+export default function Login(props) {
+
+    const data = useSelector(state => {
+        console.log(state);
+    });
+
+    return (
+        <div>
+            hola
+            <button type="button" class="btn btn-primary">Primary</button>
+        </div>
+    )
 }
+
