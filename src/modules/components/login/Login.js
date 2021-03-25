@@ -9,8 +9,8 @@ export default function Login(props) {
 
     return (
         <div>
-            hola
-            <button type="button" class="btn btn-primary">Primary</button>
+            hola.
+            <button type="button" class="btn btn-primary">Primarymmmmmm</button>
         </div>
     )
 }
