@@ -1,9 +1,8 @@
-import { apiUrl } from '../helpers/config';
+import { apiUrl,handleResponse,showRequest } from '../helpers/config';
 
 export const userService = {
     login,
-    logout,
-    register
+    logout
 }; 
 
 function login(email, password) { 
@@ -23,26 +22,4 @@ function login(email, password) {
 
 function logout() {
     localStorage.removeItem('user');
-}
-
-function register(user) {
-    
-}
-
-function handleResponse(response) {
-    return response.text().then(text => {
-        const data = text && JSON.parse(text);
-        if (!response.ok) {
-
-            if (response.status === 401) {
-                logout();
-                //location.reload(true);authHeader
-            }
-
-            const error = (data && data.message) || response.statusText;
-            return Promise.reject(error);
-        }
-
-        return data;
-    });
 }

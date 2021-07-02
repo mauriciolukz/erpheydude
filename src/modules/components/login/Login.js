@@ -38,6 +38,12 @@ export class Login extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.alert !== prevProps.alert) {
+            this.setState({ submitted: false });
+        }
+    }
+
     render() {
 
         const {alert } = this.props;
@@ -70,7 +76,7 @@ export class Login extends Component {
                             }
                             <div className="input-group mb-3">
                                 <span className="input-group-text"><FontAwesomeIcon icon={faLock}/></span>
-                                <input type="text" className={'form-control' + (submitted && !password ? ' border border-danger' : '')} name="password" placeholder="Password" aria-label="Password" aria-describedby="password" value={password} onChange={this.handleOnchange} required/>
+                                <input type="password" className={'form-control' + (submitted && !password ? ' border border-danger' : '')} name="password" placeholder="Password" aria-label="Password" aria-describedby="password" value={password} onChange={this.handleOnchange} required/>
                             </div>
                             <div className="d-flex justify-content-start mb-3">
                                 <button className="btn btn-danger" type="submit">Login</button>
