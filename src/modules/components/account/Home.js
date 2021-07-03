@@ -139,7 +139,7 @@ const mapStateToProps = (state) => {
     console.log("state",state);
     return { user };
     /*const { modal } = state;
-    return { modal };  */
+    return { modal };  */ 
   }
   
   const mapDispatchToProps = {
