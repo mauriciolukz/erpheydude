@@ -50,7 +50,7 @@ export class Login extends Component {
         const { email, password, submitted } = this.state;
 
         if (submitted)
-                return <div class="row d-flex justify-content-center mt-5"><div class="spinner-border text-danger row col-12" role="status"><span class="visually-hidden">Loading...</span></div></div>
+                return <div className="row d-flex justify-content-center mt-5"><div className="spinner-border text-danger row col-12" role="status"><span className="visually-hidden">Loading...</span></div></div>
 
         return (
             <div className="container login mt-5">
@@ -94,7 +94,7 @@ export class Login extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { alert } = state;
+    const { alert,user } = state;
     return { alert };
 }
 
